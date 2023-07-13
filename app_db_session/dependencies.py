@@ -19,3 +19,9 @@ def get_db() -> Session:
         yield db.get_session()
     finally:
         db.get_session().close()
+
+def get_db2() -> Session:
+    try:
+        yield db.get_session()
+    finally:
+        pass  # Do not close the session here
